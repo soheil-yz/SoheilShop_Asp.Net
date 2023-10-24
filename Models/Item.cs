@@ -5,8 +5,8 @@
         public int Id { get; set; }
 
         public Products Products { get; set; }
-        public string Price { get; set; }
+        public decimal Price { get; set; }
         public int QuantityInStock {  get; set; }
-
+         
     }
 }
