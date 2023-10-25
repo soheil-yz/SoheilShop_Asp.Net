@@ -8,10 +8,13 @@ namespace SoheilShop.Data
         public SoheilShopContext(DbContextOptions<SoheilShopContext> options) : base(options) { }
 
         public DbSet<Category> category { get; set; }
-
-
+        public DbSet<CategoryToProduct> CategoryToProducts { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Item> Items { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<CategoryToProduct>().HasKey(t => new { t.ProductId, t.CategoryId });
+            #region seed Data
             modelBuilder.Entity<Category>().HasData(new Category()
             {
                 Id = 1,
@@ -33,6 +36,7 @@ namespace SoheilShop.Data
                 Name = "لوازم خانگی",
                 Description = "لوازم خانگی"
             });
+            #endregion
             base.OnModelCreating(modelBuilder);
         }
     }
