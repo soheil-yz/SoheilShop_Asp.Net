@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.CodeAnalysis.Options;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SoheilShop.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +27,13 @@ namespace SoheilShop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            #region Db Context
+            services.AddDbContext<SoheilShopContext>(Option =>
+            {
+                Option.UseSqlServer("Data Source=SOHEIL\\SQL2022;Initial Catalog=SoheilShop_DB;Integrated Security=true;TrustServerCertificate=True\r\n");
+            });                                                                                
+
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
