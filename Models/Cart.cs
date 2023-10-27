@@ -15,7 +15,7 @@ namespace SoheilShop.Models
         }
         public void addCartItem(CartItem item)
         {
-            if (CartItems.Exists(i => i.Item.Id == item.Id))
+            if (CartItems.Exists(i => i.Item.Id == item.Item.Id))
             {
                 CartItems.Find(i => i.Item.Id == item.Item.Id)
                     .Quantity += 1;
@@ -28,7 +28,8 @@ namespace SoheilShop.Models
         }
         public void removeItem(int itemId)
         {
-            var item = CartItems.SingleOrDefault(c=>c.Id == itemId);
+            var item = CartItems
+                .SingleOrDefault(c=>c.Item.Id == itemId);
             if(item?.Quantity <= 1) 
             {
                 CartItems.Remove(item);
