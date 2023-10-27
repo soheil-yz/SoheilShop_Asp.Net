@@ -4,7 +4,7 @@
     @foreach (var items in Model)
     {
         <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="#">@items.Name</a>
+            <a href="/Group/@items.Id/@items.Name">@items.Name</a>
             <span class="badge badge-primary badge-pill">0</span>
         </li>
     }
