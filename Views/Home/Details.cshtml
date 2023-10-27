@@ -4,18 +4,19 @@
 }
 
 <div >
-    <h1 class="display-5">@Model.product.Name</h1>
+    <h1 class="display-5 text-center">@Model.product.Name</h1>
+    <hr/>
     <img src="/images/@(Model.product.Id).jpg"
          alt="@Model.product.Name" 
          class="img-thumbnail"
-         height="320" width="320"/>
+         height="800" width="800"/>
 
-    <p>@Model.product.Description</p>
-    <p>@Model.product.Item.Price</p>
+    <p class="py-5 text-justify">@Model.product.Description</p>
+    <p>قیمت : @Model.product.Item.Price</p>
     <dl>
         @foreach(var item in Model.categories)
         {
-            <dt>@item.Name</dt>
+            <dt><a>@item.Name</a></dt>
             <dd>@item.Description</dd>
         }
     </dl>
