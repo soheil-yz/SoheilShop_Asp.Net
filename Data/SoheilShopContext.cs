@@ -7,10 +7,11 @@ namespace SoheilShop.Data
     {
         public SoheilShopContext(DbContextOptions<SoheilShopContext> options) : base(options) { }
 
-        public DbSet<Category> category { get; set; }
+        public DbSet<Category> Category { get; set; }
         public DbSet<CategoryToProduct> CategoryToProducts { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Item> Items { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CategoryToProduct>().HasKey(t => new { t.ProductId, t.CategoryId });

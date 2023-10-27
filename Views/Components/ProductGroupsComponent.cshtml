@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Category>
+
+<ul class="list-group">
+    @foreach (var items in Model)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="#">@items.Name</a>
+            <span class="badge badge-primary badge-pill">0</span>
+        </li>
+    }
+</ul>
+

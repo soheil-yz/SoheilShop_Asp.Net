@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\sohei\OneDrive\Desktop\ایمان تقوا وعمل صالح\csharp\SoheilShop\SoheilShop\SoheilShop
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/sohei/OneDrive/Desktop/ایمان تقوا وعمل صالح/csharp/SoheilShop/SoheilShop/SoheilShop/Views/Components/ProductGroupsComponent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xQcm9kdWN0R3JvdXBzQ29tcG9uZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sohei/OneDrive/Desktop/ایمان تقوا وعمل صالح/csharp/SoheilShop/SoheilShop/SoheilShop/Views/Home/ContactUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0VXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
