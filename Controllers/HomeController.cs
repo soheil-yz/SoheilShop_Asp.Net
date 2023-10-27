@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SoheilShop.Data;
 using SoheilShop.Models;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,17 @@ namespace SoheilShop.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private SoheilShopContext _context;
+        public HomeController(ILogger<HomeController> logger, SoheilShopContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var products = _context.Products.ToList();
+            return View(products);
         }
         [Route("ContactUs")]
         public IActionResult ContactUs()
