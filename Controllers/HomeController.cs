@@ -25,6 +25,11 @@ namespace SoheilShop.Controllers
             var products = _context.Products.ToList();
             return View(products);
         }
+        public IActionResult Details(int id)
+        {
+            return null;
+        }
+
         [Route("ContactUs")]
         public IActionResult ContactUs()
         {

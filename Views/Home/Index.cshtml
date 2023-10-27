@@ -5,5 +5,18 @@
 
 <div class="text-center">
     <h1 class="display-4">به فروشگاه ما خوش امدید</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-3">
+                <div class="card">
+                    <img src="/images/@(product.Id).jpg" height="160" width="160" class="card-img-top img-thumbnail" />
+                    <div>
+                        <h5 class="card-title-">@product.Name</h5>
+                        <a asp-action="Detail" asp-controller="Home" asp-route-id="@product.Id">جزئیات محصول</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
