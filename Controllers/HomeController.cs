@@ -15,6 +15,7 @@ namespace SoheilShop.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private SoheilShopContext _context;
+        private static Cart _cart=new Cart();   
         public HomeController(ILogger<HomeController> logger, SoheilShopContext context)
         {
             _logger = logger;
@@ -50,7 +51,22 @@ namespace SoheilShop.Controllers
         }
         public IActionResult AddToCart(int itemId) 
         {
+            var product = _context.Products.Include(p=>p.Item).SingleOrDefault(p => p.ItemId == itemId);
+            if (product != null)
+            {
+                var cartItem = new CartItem()
+                {
+                    Item = product.Item,
+                    Quantity = 1,
+
+                };
+                _cart.addCartItem(cartItem);
+            }
             return null;
+        }
+        public IActionResult ShowCart()
+        {
+            return View();
         }
 
         [Route("ContactUs")]
