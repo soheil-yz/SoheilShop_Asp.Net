@@ -27,7 +27,23 @@ namespace SoheilShop.Controllers
         }
         public IActionResult Details(int id)
         {
-            return null;
+            var product = _context.Products.Find(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            var categories = _context.Products
+                .Where(p =>p.Id == id)
+                .SelectMany(c=>c.CategoryToProducts)
+                .Select(ca=>ca.Category)
+                .ToList();
+            var VM = new DetailsViewModel()
+            {
+                product = product,
+                categories = categories
+            }; 
+            
+            return View(VM);
         }
 
         [Route("ContactUs")]
