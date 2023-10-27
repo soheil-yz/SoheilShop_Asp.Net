@@ -3,5 +3,27 @@
     ViewData["Title"] = "کالا " + Model.product.Name;
 }
 
-<h1>Details</h1>
+<div class="text-center">
+    <h1 class="display-4">@Model.product.Name</h1>
+    <img src="/images/@(Model.product.Id).jpg"
+         alt="@Model.product.Name" 
+         class="img-thumbnail"
+         height="320" width="320"/>
 
+    <p>@Model.product.Description</p>
+    <p>@Model.product.Item.Price</p>
+    <dl>
+        @foreach(var item in Model.categories)
+        {
+            <dt>@item.Name</dt>
+            <dd>@item.Description</dd>
+        }
+    </dl>
+    <div>
+        <a class="btn btn-primary"
+        asp-action="AddToCart"
+        asp-controller="Home"
+        asp-route-itemId="@Model.product.ItemId">افزودن به سبد خرید</a>
+    </div>
+
+</div>

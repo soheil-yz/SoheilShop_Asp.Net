@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SoheilShop.Data;
 using SoheilShop.Models;
@@ -22,12 +23,14 @@ namespace SoheilShop.Controllers
 
         public IActionResult Index()
         {
-            var products = _context.Products.ToList();
+            var products = _context.Products
+                .ToList();
             return View(products);
         }
         public IActionResult Details(int id)
         {
-            var product = _context.Products.Find(id);
+            var product = _context.Products.Include(p => p.Item).SingleOrDefault(c=>c.Id == id);
+
             if (product == null)
             {
                 return NotFound();
@@ -44,6 +47,10 @@ namespace SoheilShop.Controllers
             }; 
             
             return View(VM);
+        }
+        public IActionResult AddToCart(int itemId) 
+        {
+            return null;
         }
 
         [Route("ContactUs")]
