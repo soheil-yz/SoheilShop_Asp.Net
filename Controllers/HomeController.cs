@@ -15,7 +15,7 @@ namespace SoheilShop.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private SoheilShopContext _context;
-        private static Cart _cart=new Cart();   
+        private static Cart _cart = new Cart();   
         public HomeController(ILogger<HomeController> logger, SoheilShopContext context)
         {
             _logger = logger;

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SoheilShop.Data;
+using SoheilShop.Models;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SoheilShop.Components
@@ -14,10 +16,13 @@ namespace SoheilShop.Components
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View("/views/Components/ProductGroupsComponent.cshtml",_context.Category);
+            var categories = _context.Category.Select(c => new ShowGroupViewModel()
+            {
+                GroupId = c.Id,
+                Name = c.Name,
+                ProductCount = _context.CategoryToProducts.Count(g=>g.CategoryId == c.Id)
+            }).ToList();
+            return View("/views/Components/ProductGroupsComponent.cshtml", categories);
         }
-
-
-
     }
 }
