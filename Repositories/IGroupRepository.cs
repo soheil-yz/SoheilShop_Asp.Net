@@ -20,7 +20,7 @@ namespace SoheilShop.Repositories
         }
         public IEnumerable<Category> GetAllCategories()
         {
-            throw new System.NotImplementedException();
+            return _context.Category;
         }
 
         public IEnumerable<ShowGroupViewModel> GetAllShowGroup()
