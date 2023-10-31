@@ -38,6 +38,7 @@ namespace SoheilShop
 
             #region Ioc
             services.AddScoped<IGroupRepository, GroupRepository>();
+            services.AddScoped<IUsersRepository, UserRepository>();
             #endregion
         }
 
