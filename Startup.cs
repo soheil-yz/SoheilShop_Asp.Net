@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SoheilShop.Data;
+using SoheilShop.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,12 @@ namespace SoheilShop
             services.AddDbContext<SoheilShopContext>(Option =>
             {
                 Option.UseSqlServer("Data Source=SOHEIL\\SQL2022;Initial Catalog=SoheilShop_DB;Integrated Security=true;TrustServerCertificate=True\r\n");
-            });                                                                                
+            });
 
+            #endregion
+
+            #region Ioc
+            services.AddScoped<IGroupRepository, GroupRepository>();
             #endregion
         }
 

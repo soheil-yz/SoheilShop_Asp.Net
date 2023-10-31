@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "H/c9Z7prWAvYLdejie0pRfj++BECk9HmqBuh36L88HM=",
+  "Hash": "x8vwQNuN7huq30mViMkACnF3r82DoYp+cThwxtbBh8U=",
   "Source": "SoheilShop",
   "BasePath": "_content/SoheilShop",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\sohei\\OneDrive\\Desktop\\ایمان تقوا وعمل صالح\\csharp\\SoheilShop\\SoheilShop\\SoheilShop\\wwwroot\\images\\4.jpg",
+      "SourceId": "SoheilShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sohei\\OneDrive\\Desktop\\ایمان تقوا وعمل صالح\\csharp\\SoheilShop\\SoheilShop\\SoheilShop\\wwwroot\\",
+      "BasePath": "_content/SoheilShop",
+      "RelativePath": "images/4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\4.jpg"
     },
     {
       "Identity": "C:\\Users\\sohei\\OneDrive\\Desktop\\ایمان تقوا وعمل صالح\\csharp\\SoheilShop\\SoheilShop\\SoheilShop\\wwwroot\\js\\site.js",
