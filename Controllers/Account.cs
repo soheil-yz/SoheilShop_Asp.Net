@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Internal;
 using SoheilShop.Models;
 using SoheilShop.Repositories;
+using System;
 
 namespace SoheilShop.Controllers
 {
@@ -32,7 +33,8 @@ namespace SoheilShop.Controllers
             {
             Email = register.Email.ToLower(),
             Password = register.Password,
-            IsAdmin = false
+            IsAdmin = false,
+            RegisterDate = DateTime.Now
             };
             _usersRepository.AddUser(users);
             return View("SuccessRegister",register);
