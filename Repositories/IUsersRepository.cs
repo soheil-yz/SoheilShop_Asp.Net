@@ -8,7 +8,7 @@ namespace SoheilShop.Repositories
     {
         bool IsExistUserEmail(string email);
         void AddUser(Users user);
-        //Users GetUserForLogin()
+        Users GetUserForLogin(string email, string password);
     }
     public class UserRepository : IUsersRepository
     {
@@ -22,6 +22,11 @@ namespace SoheilShop.Repositories
         {
             _context.Add(user);
             _context.SaveChanges();
+        }
+
+        public Users GetUserForLogin(string email, string password)
+        {
+            return _context.Users.SingleOrDefault(u=>u.Email == email && u.Password == password);
         }
 
         public bool IsExistUserEmail(string email)
