@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "x8vwQNuN7huq30mViMkACnF3r82DoYp+cThwxtbBh8U=",
+  "Hash": "fvgGaJJ9dQEM5wtP/q2dZCp2w+zryucM49XvYcLF4FA=",
   "Source": "SoheilShop",
   "BasePath": "_content/SoheilShop",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\sohei\\OneDrive\\Desktop\\ایمان تقوا وعمل صالح\\csharp\\SoheilShop\\SoheilShop\\SoheilShop\\wwwroot\\css\\Admin.css",
+      "SourceId": "SoheilShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sohei\\OneDrive\\Desktop\\ایمان تقوا وعمل صالح\\csharp\\SoheilShop\\SoheilShop\\SoheilShop\\wwwroot\\",
+      "BasePath": "_content/SoheilShop",
+      "RelativePath": "css/Admin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Admin.css"
+    },
     {
       "Identity": "C:\\Users\\sohei\\OneDrive\\Desktop\\ایمان تقوا وعمل صالح\\csharp\\SoheilShop\\SoheilShop\\SoheilShop\\wwwroot\\css\\bootstrap-rtl.css",
       "SourceId": "SoheilShop",
