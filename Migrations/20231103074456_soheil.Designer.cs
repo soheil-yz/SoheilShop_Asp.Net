@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SoheilShop.Data;
 
@@ -11,9 +12,11 @@ using SoheilShop.Data;
 namespace SoheilShop.Migrations
 {
     [DbContext(typeof(SoheilShopContext))]
-    partial class SoheilShopContextModelSnapshot : ModelSnapshot
+    [Migration("20231103074456_soheil")]
+    partial class soheil
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -250,6 +253,9 @@ namespace SoheilShop.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int?>("ProdcutId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -257,7 +263,7 @@ namespace SoheilShop.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProdcutId");
 
                     b.ToTable("OrderDetails");
                 });
@@ -384,9 +390,7 @@ namespace SoheilShop.Migrations
 
                     b.HasOne("SoheilShop.Models.Product", "Product")
                         .WithMany("OrderDetails")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProdcutId");
 
                     b.Navigation("Order");
 

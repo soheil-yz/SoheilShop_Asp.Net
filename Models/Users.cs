@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SoheilShop.Models
@@ -14,5 +15,7 @@ namespace SoheilShop.Models
         [Required]
         public DateTime RegisterDate { get; set; }
         public bool IsAdmin { get; set; }
+
+        public List<Order> orders { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SoheilShop.Data;
 
@@ -11,9 +12,11 @@ using SoheilShop.Data;
 namespace SoheilShop.Migrations
 {
     [DbContext(typeof(SoheilShopContext))]
-    partial class SoheilShopContextModelSnapshot : ModelSnapshot
+    [Migration("20231103080038_soheil2")]
+    partial class soheil2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
